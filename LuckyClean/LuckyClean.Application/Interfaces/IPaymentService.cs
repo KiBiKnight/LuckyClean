@@ -3,7 +3,7 @@ using LuckyClean.Domain.Enums;
 
 namespace LuckyClean.Application.Interfaces
 {
-    internal interface IPaymentService
+    public interface IPaymentService
     {
         Task<PaymentResult> ProcessPaymentAsync(PaymentMethod method, decimal amount);
     }
