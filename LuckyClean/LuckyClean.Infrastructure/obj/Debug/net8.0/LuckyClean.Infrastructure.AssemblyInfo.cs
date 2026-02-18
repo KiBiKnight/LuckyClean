@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LuckyClean.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+46aaa55ae7a851e38bffa43d9a72fb52626d627d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d6340da132567e8113346f3ed65c0153f8006962")]
 [assembly: System.Reflection.AssemblyProductAttribute("LuckyClean.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LuckyClean.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
