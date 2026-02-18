@@ -1,2 +1,0 @@
-D:\Repos\LuckyTest\Web.Api\Application\obj\Debug\Application.csproj.AssemblyReference.cache
-D:\Repos\LuckyTest\Web.Api\Application\obj\Debug\Application.csproj.CoreCompileInputs.cache
