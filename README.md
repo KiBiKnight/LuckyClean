@@ -44,7 +44,7 @@ Dependencies flow inward: **API → Infrastructure → Application → Domain**
    dotnet run --project LuckyClean.API
    ```
 
-5. **Open Swagger UI** to test endpoints at `https://localhost:7008/swagger`
+5. **Open Swagger UI** to test endpoints at `https://localhost:{port}/swagger`
 
 ## API Endpoints
 
