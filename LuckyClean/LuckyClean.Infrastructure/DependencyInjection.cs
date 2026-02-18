@@ -16,6 +16,8 @@ namespace LuckyClean.Infrastructure
         {
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlite(config.GetConnectionString("Default")));
+            services.Configure<EmailSettings>(config.GetSection("EmailSettings"));
+            services.Configure<PaymentSettings>(config.GetSection("PaymentSettings"));
 
             services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
@@ -27,8 +29,14 @@ namespace LuckyClean.Infrastructure
             {
                 services.AddHttpClient<IPaymentService, PaymentService>();
             }
-            services.AddScoped<IEmailService, EmailService>();
-            services.Configure<PaymentSettings>(config.GetSection("PaymentSettings"));
+            if (config.GetValue<bool>("UseMockEmail"))
+            {
+                services.AddScoped<IEmailService, MockEmailService>();
+            }
+            else
+            {
+                services.AddScoped<IEmailService, EmailService>();
+            }
 
             return services;
         }
