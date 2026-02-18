@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using LuckyClean.Application.Interfaces;
 using LuckyClean.Infrastructure.Services;
+using LuckyClean.Infrastructure.Configuration;
 
 namespace LuckyClean.Infrastructure
 {
@@ -18,8 +19,16 @@ namespace LuckyClean.Infrastructure
 
             services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
-            services.AddScoped<IPaymentService, PaymentService>();
+            if (config.GetValue<bool>("UseMockPayment"))
+            {
+                services.AddScoped<IPaymentService, MockPaymentService>();
+            }
+            else
+            {
+                services.AddHttpClient<IPaymentService, PaymentService>();
+            }
             services.AddScoped<IEmailService, EmailService>();
+            services.Configure<PaymentSettings>(config.GetSection("PaymentSettings"));
 
             return services;
         }
